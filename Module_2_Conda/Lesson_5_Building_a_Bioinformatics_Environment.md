@@ -18,7 +18,15 @@ conda activate bioinfo
 
 ## Install core bioinformatics tools
 
-This command installs a standard set of tools used in many workflows.
+This command installs a standard set of tools used in many workflows. Here is a quick summary of what each tool is used for:
+
+- `samtools`: Manipulates SAM/BAM/CRAM alignment files (view, sort, index)
+- `seqkit`: Fast toolkit for inspecting and transforming FASTA/FASTQ files
+- `fastqc`: Quality control reports for raw sequencing reads
+- `multiqc`: Aggregates QC reports from many samples into one summary
+- `minimap2`: Aligns long reads or assemblies to a reference genome
+- `blast`: Finds sequence similarity against reference databases
+- `bowtie2`: Aligns short reads to a reference genome
 
 ```bash
 conda install samtools seqkit fastqc multiqc minimap2 blast bowtie2
