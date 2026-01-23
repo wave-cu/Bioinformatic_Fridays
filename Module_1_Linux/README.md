@@ -19,6 +19,6 @@ By the end of this module, you will be able to:
 - Lesson 1: Fundamentals and basic commands\n  - Covers navigation, file listing, and basic file operations
 - Lesson 2: Text processing, pipes, and redirection\n  - Introduces `grep`, `sort`, `uniq`, and combining commands with pipes
 - Lesson 3: Scripting and permissions\n  - Explains executable scripts, permissions, and safe automation
-- Lesson 4: SSH and remote work\n  - Shows how to connect to remote systems and transfer files
+- Lesson 4: SSH and remote work\n  - Shows how to connect to remote systems and transfer files\n- Lesson 5: Absolute and Relative Paths\n  - Covers the root directory, absolute vs. relative paths, and navigating mounted drives (/mnt)
 
 > Note: All examples and exercises use the data in `Training/`.
