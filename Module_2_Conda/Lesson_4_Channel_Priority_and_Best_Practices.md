@@ -64,3 +64,10 @@ channels:
   - conda-forge
   - bioconda
 ```
+
+If you find that `bioconda` is above `conda-forge`, you can run the following command to fix the order:
+
+```bash
+conda config --add channels conda-forge
+```
+This will move `conda-forge` to the top of the list, ensuring that it has higher priority than `bioconda`.
