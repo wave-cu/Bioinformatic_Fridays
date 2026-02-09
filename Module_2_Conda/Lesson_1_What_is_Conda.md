@@ -30,6 +30,8 @@ Examples of tools that are difficult or impossible to install with `pip` alone i
 - `blast`
 - `fastqc`
 - `multiqc`
+- `plink`
+  
 
 Conda provides prebuilt binaries for these tools, making installation reliable.
 
