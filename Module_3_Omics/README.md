@@ -6,7 +6,7 @@ This module marks the transition from computational literacy to biological disco
 
 * **Systemic Understanding:** Comprehend the Omics hierarchy and the flow of information from genotype to phenotype.
 * **Data Integrity:** Master the "Big Four" bioinformatic file formats (FASTQ, FASTA, BAM, VCF) and their technical specifications.
-* **Standard Operating Procedures (SOPs):** Execute reproducible workflows for Quality Control, Trimming, Alignment, and Variant Discovery.
+* **Standard Operating Procedures (SOPs):** Execute reproducible workflows for long-read de novo assembly, reference-based mapping, and consensus generation.
 
 ## Lessons 
 Each lesson below is a standalone guide containing technical theory and executable code blocks.
@@ -17,21 +17,25 @@ Lesson 1: The Omics Hierarchy & File Architecture.
 Lesson 2: Precision Quality Control (QC)
 *    Focus: Statistical assessment of raw data "health" using FastQC and MultiQC.
 
-Lesson 3: Digital Surgery (Read Trimming)
-*   Focus: Pre-processing raw reads with Trimmomatic to remove adapter contamination.
+Lesson 3: Genome Assembly Foundations
+*   Focus: What genome assembly is, why it matters, de novo vs reference-based strategies, software for short and long reads, and an end-to-end assembly pipeline overview.
   
-Lesson 4: Genomic Mapping & Alignment
-*   Focus: Reconstructing the genome by aligning short reads to a reference using BWA-MEM and Samtools.
+Lesson 4: De novo Assembly (Hands-on)
+*   Focus: Long-read de novo assembly using `barcode57` and `barcode58`, including host-read filtering, Flye assembly, and BLAST annotation workflow.
 
-Lesson 5: Variant Discovery & Interpretation
-* Focus: Identifying Single Nucleotide Polymorphisms (SNPs) and Indels using BCFtools.
+Lesson 5: Reference-Based Assembly
+* Focus: Long-read reference-guided assembly against combined ACMV DNA-A and DNA-B, with mapping QC and consensus sequence generation.
 
 ## Module Toolbox
-To follow these lessons, ensure your module_3_omics environment is active.
+To follow Lessons 1-2, ensure your base omics environment is active. For Lessons 4-5, use the dedicated `flye_env`.
 
 ```
 Bash
-# Create and activate the specialized Omics environment
-conda create -n module_3_omics fastqc multiqc trimmomatic bwa samtools bcftools -y
+# Create and activate the Omics environment for lessons 1-2
+conda create -n module_3_omics fastqc multiqc -y
 conda activate module_3_omics
+
+# Create and activate the assembly environment for lessons 4-5
+conda create -n flye_env -c bioconda -c conda-forge flye minimap2 samtools blast -y
+conda activate flye_env
 ```

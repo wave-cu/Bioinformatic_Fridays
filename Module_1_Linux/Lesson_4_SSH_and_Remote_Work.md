@@ -27,20 +27,20 @@ Common best practices:
 If the connection succeeds, you might see a login banner and then a remote prompt. You are now working on the remote system.
 
 ```bash
-ssh bodeoni@172.16.12.88
+ssh student@172.16.12.88
 ```
-In the above example, `bodeoni` is the username and `172.16.12.88` is the IP address of the remote server (host).
+In the above example, `student` is the username and `172.16.12.88` is the IP address of the remote server (host).
 
 Depending on how the server is set up, you may be prompted for a password or a key passphrase. After successful authentication, you will see a command prompt that indicates you are on the remote server.
 
 ```
-bodeoni@172.16.12.88's password:
+student@172.16.12.88's password:
 ```
 
 Enter the password, and if it's correct, you will see something like:
 
 ```
-bodeoni@debianserver:~$
+student@debianserver:~$
 ```
 
 *Note: Typically the first time you connect to a new server, you will see a message about the server's fingerprint. This is a security measure.*
@@ -66,7 +66,7 @@ When you run this, the ssh-keygen should create `~/.ssh` directory if it doesn't
 Next, you need to copy the public key to the remote server. You can use the `ssh-copy-id` command for this:
 
 ```bash
-ssh-copy-id -i ~/.ssh/id_ed25519.pub user@remote_host
+ssh-copy-id -i ~/.ssh/id_ed25519.pub student@remote_host
 ```
 
 Replace `user@remote_host` with your actual username and server address. This command will append your public key to the `~/.ssh/authorized_keys` file on the remote server.
@@ -79,6 +79,7 @@ If the ~/.ssh/authorized_keys file does not exist on the remote server, you can 
 touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 ```
+
 This will create the file and set the correct permissions.
 
 `chmod 600` ensures that only the owner can read and write the `authorized_keys` file, which is important for security.
@@ -88,7 +89,7 @@ This will create the file and set the correct permissions.
 `scp local_file user@remotehost:remote_path` copies a file from **local** to **remote**.
 
 ```bash
-scp Module_1_Linux/notes.txt username@bioinfo.example.edu:~/bioinformatics/
+scp Module_1_Linux/notes.txt student@172.16.12.88:~/bioinformatics/
 ```
 
 ### 4) Copy results back to your laptop
@@ -96,5 +97,5 @@ scp Module_1_Linux/notes.txt username@bioinfo.example.edu:~/bioinformatics/
 `scp user@host:remote_file local_path` copies a file from remote to local.
 
 ```bash
-scp username@bioinfo.example.edu:~/bioinformatics/results.txt Module_1_Linux/
+scp student@172.16.12.88:~/bioinformatics/results.txt Module_1_Linux/
 ```

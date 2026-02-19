@@ -1,44 +1,46 @@
 # Lesson 1: The Omics Hierarchy & File Architecture
 
-1. Biological Context: The Omics Layers
+## **1. Biological Context: The Omics Layers**
+
 Omics refers to the collective technologies used to explore the roles, relationships, and actions of various types of molecules in an organism. We view this through the lens of the Central Dogma of Molecular Biology:
 
 * Genomics (DNA-Seq): The study of the complete set of DNA (the genome). It focuses on the static "blueprint" identifying mutations like SNPs (Single Nucleotide Polymorphisms) that might predispose an organism to a trait or disease.
 
 * Transcriptomics (RNA-Seq): The study of the transcriptome—the complete set of RNA transcripts produced by the genome. This layer tells us which genes are "turned on" or "expressed" under specific conditions.
 
-2. Technical Definitions: The "Big Four" File Formats
+## **2. Technical Definitions: The "Big Four" File Formats**
 
-I. FASTQ: The Raw Sequence 
+### **I. FASTQ: The Raw Sequence**
+
 The FASTQ file is the raw output from a sequencing machine (like Illumina or Oxford Nanopore).
 
-Definition: A text-based format that stores both a biological sequence and its corresponding quality scores.
+**Definition:** A text-based format that stores both a biological sequence and its corresponding quality scores.
 
 Structure (The 4-Line Rule):
 
-Line 1: Header (starts with @) containing sequence ID and hardware info.
+**Line 1:** Header (starts with @) containing sequence ID and hardware info.
 
-Line 2: The actual sequence (A, C, T, G, N).
+**Line 2:** The actual sequence (A, C, T, G, N).
 
-Line 3: Separator (starts with +).
+**Line 3:** Separator (starts with +).
 
-Line 4: Phred Quality Scores (encoded in ASCII characters).
+**Line 4:** Phred Quality Scores (encoded in ASCII characters).
 
-II. FASTA: The Reference Genome (The Map)
+### **II. FASTA: The Reference Genome (The Map)**
 
-Definition: A simple text format for representing either nucleotide or peptide sequences.
+**Definition:** A simple text format for representing either nucleotide or peptide sequences.
 
-Usage: We use these as "Reference Genomes." When we analyze your Training data, we compare your raw reads (FASTQ) against this gold-standard map (FASTA).
+**Usage:** We use these as "Reference Genomes." When we analyze your Training data, we compare your raw reads (FASTQ) against this gold-standard map (FASTA).
 
-Structure: Starts with a > followed by the sequence name/description.
+**Structure:** Starts with a > followed by the sequence name/description.
 
-III. SAM/BAM: The Alignment Address (The Connection)
+### **III. SAM/BAM: The Alignment Address (The Connection)**
 
-SAM (Sequence Alignment Map): A human-readable text file that shows where each FASTQ read "lives" on the FASTA reference.
+**SAM (Sequence Alignment Map):** A human-readable text file that shows where each FASTQ read "lives" on the FASTA reference.
 
-BAM (Binary Alignment Map): The exact same data as a SAM file, but compressed into a binary format that computers can read incredibly fast.
+**BAM (Binary Alignment Map):** The exact same data as a SAM file, but compressed into a binary format that computers can read incredibly fast.
 
-Essential Rule: Always use BAM for storage to save disk space, and use Samtools to "view" it.
+**Essential Rule:** Always use BAM for storage to save disk space, and use Samtools to "view" it.
 
 IV. VCF: The Variant Call Format (The Truth)
 
