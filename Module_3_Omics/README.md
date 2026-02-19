@@ -27,15 +27,4 @@ Lesson 5: Reference-Based Assembly
 * Focus: Long-read reference-guided assembly against combined ACMV DNA-A and DNA-B, with mapping QC and consensus sequence generation.
 
 ## Module Toolbox
-To follow Lessons 1-2, ensure your base omics environment is active. For Lessons 4-5, use the dedicated `flye_env`.
-
-```
-Bash
-# Create and activate the Omics environment for lessons 1-2
-conda create -n module_3_omics fastqc multiqc -y
-conda activate module_3_omics
-
-# Create and activate the assembly environment for lessons 4-5
-conda create -n flye_env -c bioconda -c conda-forge flye minimap2 samtools blast -y
-conda activate flye_env
-```
+To follow Lessons 1-2, ensure your base omics environment is active. For Lessons 4-5, use the dedicated `bioinfo' environment.
